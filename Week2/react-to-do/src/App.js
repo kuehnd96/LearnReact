@@ -5,13 +5,30 @@ import './App.css';
 function App() {
   
   const [todos, setTodos] = useState([
-    {text: "Learn about React"},
-    {text: "Meet friend for lunch"},
-    {text: "Build really cool todo app"}
+    {
+      text: "Learn about React",
+      isComplete: false
+    },
+    {
+      text: "Meet friend for lunch",
+      isComplete: false
+    },
+    {
+      text: "Build really cool todo app",
+      isComplete: false
+    }
   ]);
 
   const addTodo = text => {
     const newTodos = [...todos, { text }];
+
+    setTodos(newTodos);
+  };
+
+  const completeTodo = index => {
+    const newTodos = [...todos];
+
+    newTodos[index].isComplete = true;
 
     setTodos(newTodos);
   };
@@ -23,7 +40,8 @@ function App() {
           <Todo
             key={index}
             index={index}
-            todo={todo} 
+            todo={todo}
+            completeTodo={completeTodo}
           />
         ))}
         <TodoForm addTodo={addTodo} />
@@ -33,7 +51,20 @@ function App() {
 }
 
 // How we display a todo item
-const Todo = ({ todo }) => <div className="todo">{todo.text}</div>
+function Todo({ todo, index, completeTodo }) {
+  return (
+    <div
+      className="todo"
+      style={{ textDecoration: todo.isComplete ? "line-through" : "" }}
+    >
+      {todo.text}
+
+      <div>
+        <button onClick={() => completeTodo(index)}>Complete</button>
+      </div>
+    </div>
+  );
+}
 
 // Input form for new todo items
 function TodoForm({ addTodo }) {

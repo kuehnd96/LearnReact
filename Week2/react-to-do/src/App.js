@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 
-// functional component w/ hooks
+// functional component w/ state using hooks
 function App() {
   
   const [todos, setTodos] = useState([

@@ -1,4 +1,5 @@
 import React from 'react';
+import MessageList from "./MessageList"
 
 const DUMMY_DATA = [
   {
@@ -23,9 +24,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
-        <Title />
         <MessageList messages={this.state.messages} />
-        <SendMessageForm />
       </div>
     )
   }

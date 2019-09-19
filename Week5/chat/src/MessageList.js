@@ -11,7 +11,7 @@ class MessageList extends React.Component {
                                 {message.senderId}
                             </div>
                             <div>
-                                {message.text}
+                                {message.parts[0].payload.content}
                             </div>
                         </li>
                     )

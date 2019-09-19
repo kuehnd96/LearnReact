@@ -3,6 +3,7 @@ import Chatkit from "@pusher/chatkit-client"
 
 import MessageList from "./MessageList"
 import SendMessageForm from "./SendMessageForm"
+import Title from "./Title"
 
 const chatInstanceLocator = "v1:us1:58358383-107a-400c-9ae9-bbd142203629"
 const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/58358383-107a-400c-9ae9-bbd142203629/token";
@@ -63,6 +64,7 @@ class App extends React.Component {
   render() {
     return (
       <div className="app">
+        <Title />
         <MessageList messages={this.state.messages} />
         <SendMessageForm sendMessage={this.sendMessage} />
       </div>

@@ -2,7 +2,7 @@ import React from 'react';
 import Chatkit from "@pusher/chatkit-client"
 
 import MessageList from "./MessageList"
-
+import SendMessageForm from "./SendMessageForm"
 
 const chatInstanceLocator = "v1:us1:58358383-107a-400c-9ae9-bbd142203629"
 const testToken = "https://us1.pusherplatform.io/services/chatkit_token_provider/v1/58358383-107a-400c-9ae9-bbd142203629/token";
@@ -16,6 +16,8 @@ class App extends React.Component {
     this.state = {
       messages: []
     };
+
+    this.sendMessage = this.sendMessage.bind(this);
   }
 
   componentDidMount() {
@@ -50,11 +52,19 @@ class App extends React.Component {
       console.error("error:", error)
     })
   }
+
+  sendMessage(text) {
+    this.currentUser.sendMessage({
+      text: text,
+      roomId: roomId
+    })
+  }
   
   render() {
     return (
       <div className="app">
         <MessageList messages={this.state.messages} />
+        <SendMessageForm sendMessage={this.sendMessage} />
       </div>
     )
   }

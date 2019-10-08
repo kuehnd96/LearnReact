@@ -35,4 +35,4 @@ I am having a lot of fun reconnecting with Javascript, creating UI's, and learni
 		* Used the Chatkit documentation to figure out how the SDK (message JSON ) has evolved
     * Another fun lesson in calling an api from a component
 * [Weed 6](https://www.fullstackreact.com/articles/react-tutorial-cloning-yelp/?source=post_page-----229c45d906a3---------------------- "React Tutorial: Cloning Yelp") :(
-    * I tried and tried but I couldn't get the code to run. It didn't seem to like my use of an older version of babel. When I tried to install the proper babel loader things took a bad turn. I may come back to this down the road.
+    * I tried and tried but I couldn't get the code to run (even with help from someone who really knows what they are doing). It didn't seem to like my use of an older version of babel. I may come back to this down the road.

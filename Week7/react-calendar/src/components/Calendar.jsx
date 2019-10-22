@@ -1,5 +1,5 @@
 import React from "react";
-import dateFns from "date-fns";
+import { format, addMonths, subMonths } from "date-fns";
 
 class Calendar extends React.Component {
   state = {
@@ -8,7 +8,7 @@ class Calendar extends React.Component {
   }
 
   renderHeader() {
-    const dateFormat = "MMMM YYYY";
+    const dateFormat = "MMMM yyyy";
 
     return (
       <div className="header row flex-middle">
@@ -19,7 +19,7 @@ class Calendar extends React.Component {
       </div>
       <div className="col col-center">
         <span>
-          {dateFns.format(this.state.currentMonth, dateFormat)}
+          {format(this.state.currentMonth, dateFormat)}
         </span>
       </div>
       <div className="col col-end" onClick={this.nextMonth}>
@@ -37,13 +37,13 @@ class Calendar extends React.Component {
 
   nextMonth = () => {
     this.setState({
-      currentMonth: dateFns.addMonths(this.state.currentMonth, 1)
+      currentMonth: addMonths(this.state.currentMonth, 1)
     });
   };
 
   prevMonth = () => {
     this.setState({
-      currentMonth: dateFns.subMonths(this.state.currentMonth, 1)
+      currentMonth: subMonths(this.state.currentMonth, 1)
     });
   };
   

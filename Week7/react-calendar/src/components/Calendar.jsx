@@ -1,5 +1,5 @@
 import React from "react";
-import { format, addMonths, subMonths, startOfWeek, addDays } from "date-fns";
+import { format, addMonths, subMonths, startOfWeek, addDays, startOfMonth, endOfMonth, endOfWeek, isSameMonth, parse, isSameDay } from "date-fns";
 
 class Calendar extends React.Component {
   state = {
@@ -46,9 +46,60 @@ class Calendar extends React.Component {
     return <div className="days row">{days}</div>
   }
 
-  renderCells() {}
+  renderCells() {
+    const { currentMonth, selectedDate } = this.state;
+    const monthStart = startOfMonth(currentMonth);
+    const monthEnd = endOfMonth(monthStart);
+    const startDate = startOfWeek(monthStart);
+    const endDate = endOfWeek(monthEnd);
+    const dateFormat = "d";
+    const rows = [];
 
-  onDateClick = day => {}
+    let days = [];
+    let day = startDate;
+    let formattedDate = "";
+
+    while (day <= endDate) {
+      for (let i = 0; i < 7; i++) {
+        formattedDate = format(day, dateFormat);
+
+        const cloneDay = day;
+
+        days.push(
+          <div 
+          className={`col cell ${
+            !isSameMonth(day, monthStart)
+              ? "disabled"
+              : isSameDay(day, selectedDate) ? "selected" : ""
+          }`}
+          key={day}
+          onClick={ () => this.onDateClick(parse(cloneDay))}
+          >
+            <span className="number">{formattedDate}</span>
+            <span className="bg">{formattedDate}</span>
+          </div>
+        );
+
+        day = addDays(day, 1);
+      }
+
+      rows.push(
+        <div className="row" key={day}>
+          {days}
+        </div>
+      );
+
+      days = [];
+    }
+
+    return <div className="body">{rows}</div>;
+  }
+
+  onDateClick = day => {
+    this.setState({
+      selectedDate: day
+    });
+  };
 
   nextMonth = () => {
     this.setState({

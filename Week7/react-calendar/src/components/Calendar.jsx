@@ -1,5 +1,5 @@
 import React from "react";
-import { format, addMonths, subMonths } from "date-fns";
+import { format, addMonths, subMonths, startOfWeek, addDays } from "date-fns";
 
 class Calendar extends React.Component {
   state = {
@@ -29,7 +29,22 @@ class Calendar extends React.Component {
     );
   }
 
-  renderDays() {}
+  renderDays() {
+    const dateFormat = "dddd";
+    const days = [];
+
+    let startDate = startOfWeek(this.state.currentMonth);
+
+    for (let i = 0; i < 7; i++) {
+      days.push (
+        <div className="col col-center" key={i}>
+          {format(addDays(startDate, i), dateFormat)}
+        </div>
+      )
+    }
+
+    return <div className="days row">{days}</div>
+  }
 
   renderCells() {}
 

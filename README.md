@@ -38,3 +38,5 @@ I am having a lot of fun reconnecting with Javascript, creating UI's, and learni
     * I tried and tried but I couldn't get the code to run (even with help from someone who really knows what they are doing). It didn't seem to like my use of an older version of babel. I may come back to this down the road.
 * [Week 7](https://blog.flowandform.agency/create-a-custom-calendar-in-react-3df1bfd0b728 "Create a custom calendar in React") :)
     * This one was a lot of fun. It was nice to try out creating a control component that can be reused.
+* [Week 14](https://www.youtube.com/watch?v=ScDWrogElmo&feature=youtu.be "React Project - Beach Resort")
+    * I am about to start this and I am looking forward to it a lot. It is a nearly 6-hour video that will show how to create a multi-page react site. I will update this when I am done with this exercise.

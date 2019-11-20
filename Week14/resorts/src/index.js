@@ -9,8 +9,8 @@ import {RoomProvider} from './context'
 ReactDOM.render(
     <RoomProvider>
         <Router>
-        <App />
-    </Router>
+            <App />
+        </Router>
     </RoomProvider>
     , document.getElementById('root'));
 

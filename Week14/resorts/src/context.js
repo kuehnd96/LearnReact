@@ -55,4 +55,14 @@ class RoomProvider extends Component {
 
 const RoomConsumer = RoomContext.Consumer;
 
+// Another way to consume context in a functional component (about 3:35:00)
+// This went over my head
+export function withRoomConsumer(Component) {
+    return function ConsumerWrapper(props) {
+        return <RoomConsumer>
+            { value => <Component {...props} context={value}/>}
+        </RoomConsumer>
+    }
+}
+
 export {RoomProvider, RoomConsumer, RoomContext} 

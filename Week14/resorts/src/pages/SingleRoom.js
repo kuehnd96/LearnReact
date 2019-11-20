@@ -17,6 +17,7 @@ export default class SingleRoom extends Component {
         }
     }
 
+    // How to access context in a class component
     static contextType = RoomContext
 
     //componentDidMount() {

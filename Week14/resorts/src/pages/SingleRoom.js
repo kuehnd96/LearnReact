@@ -10,14 +10,14 @@ export default class SingleRoom extends Component {
         super(props)
 
         //console.log(this.props)
-        // Note: React router is passing this prop
+        // NOTE: React router is passing this prop
         this.state = {
             slug: this.props.match.params.room,
             defaultBcg
         }
     }
 
-    // How to access context in a class component
+    // NOTE: How to access context in a class component
     static contextType = RoomContext
 
     //componentDidMount() {
@@ -39,7 +39,7 @@ export default class SingleRoom extends Component {
         
         const {name, description, capacity,size, price,extras,breakfast,pets,images} = room
 
-        // If you only wanted the first 3 images at 3:08:00
+        // NOTE: If you only wanted the first 3 images at 3:08:00
         return (
             <>
                 <StyledHero img={images[0] || this.state.defaultBcg}>

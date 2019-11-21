@@ -32,7 +32,7 @@ import Loading from './Loading'
 
 export default function RoomsContainer() {
     return (
-        // Hooks make this pattern less common
+        // NOTE: Hooks make this pattern less common
         <RoomConsumer>
             {
                 (value) => {

@@ -39,4 +39,6 @@ I am having a lot of fun reconnecting with Javascript, creating UI's, and learni
 * [Week 7](https://blog.flowandform.agency/create-a-custom-calendar-in-react-3df1bfd0b728 "Create a custom calendar in React") :)
     * This one was a lot of fun. It was nice to try out creating a control component that can be reused.
 * [Week 14](https://www.youtube.com/watch?v=ScDWrogElmo&feature=youtu.be "React Project - Beach Resort")
-    * This was a ton of fun. The video showed how to create a multi-screen React app that allows the user to access data on beach resort rooms. I learned more about React Router, React data context, Contentful, styled components, and React icons. I gained a lot of useful experience going from nothing to a fully-functioning multi-screen app. 
+    * This was a ton of fun. The video showed how to create a multi-screen React app that allows the user to access data on beach resort rooms. I learned more about React Router, React data context, Contentful, styled components, and React icons. I gained a lot of useful experience going from nothing to a fully-functioning multi-screen app.
+* Week 15
+    * Instead of contributing to an open source React project (which I still plan to do in the near future) I decided to create a UI for a web app from scratch for my week 15. This will give me experience in designing screens, mapping out my components, and getting a React app into the cloud using DevOps (among other things). I will link the GitHub repo once I have created it.
